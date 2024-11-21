@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sslh $CMD_OPTS -f -u root --listen $LISTEN_IP:$LISTEN_PORT \
+   --ssh $SSH_HOST:$SSH_PORT \
+   --ssl $HTTPS_HOST:$HTTPS_PORT \
+   --openvpn $OPENVPN_HOST:$OPENVPN_PORT \
+   --anyprot $WIREGUARD_HOST:$WIREGUARD_PORT \
+   $@
