@@ -11,7 +11,6 @@ ENV HTTPS_HOST localhost
 ENV HTTPS_PORT 8443
 ENV WIREGUARD_HOST localhost
 ENV WIREGUARD_PORT 51820
-ENV CMD_OPTS
 
 RUN apk update && \
        apk add --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ sslh && \
