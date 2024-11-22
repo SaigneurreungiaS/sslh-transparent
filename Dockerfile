@@ -15,7 +15,7 @@ ENV WIREGUARD_PORT 51820
 RUN apk update && \
        apk add --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ sslh && \
        rm -rf /var/cache/apk/* && \
-       iptables -t mangle -N SSLH \
+       iptables -t mangle -N SSLH && \
        iptables -t mangle -A OUTPUT -p tcp -o eth0 --sport 4443 -j SSLH && \
        iptables -t mangle -A OUTPUT -p tcp -o eth0 --sport 1194 -j SSLH && \
        iptables -t mangle -A OUTPUT -p tcp -o eth0 --sport 51820 -j SSLH && \
